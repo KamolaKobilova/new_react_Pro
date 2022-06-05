@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(225, 131, 131);">
+
+    <input type="text" id="input-el">
+    <button id="input-btn">esfd</button>
+    <div id="ul-el"></div>
+
+
+    <script>
+        let myLead = []
+        const inputEl = document.getElementById('input-el')
+        const inputBtn = document.getElementById('input-btn')
+        const ulEL = document.getElementById('ul-el')
+
+        inputBtn.addEventListener('click', function() {
+            myLead.push(inputEl.value)
+            renderLead()
+        })
+
+        function renderLead() {
+            let listItem = ""
+            for (let i = 0; i < myLead.length; i++) {
+                listItem += "<li>" + myLead[i] +
+                    "</li>"
+            }
+            ulEL.innerHTML = listItem
+        }
+    </script>
+
+</body>
+
+</html>

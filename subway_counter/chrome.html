@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <input type="text" id="input-el">
+    <button id="input-btn" onclick="saveEl()">Save</button>
+    <h2 id="text"></h2>
+    <ul id="ulEl"></ul>
+
+    <script>
+       let myLead = [] 
+       let inputBtn = document.getElementById('input-btn')
+       let input = document.getElementById('input-el')
+       let text  = document.getElementById('text')
+       let ulEl = document.getElementById('ulEl')
+
+      //  inputBtn.addEventListener('click', function(){
+      //     myLead.push(input.value)
+      //     text.innerHTML += myLead + " "
+      //  })
+       inputBtn.addEventListener('click', function(){
+          myLead.push(input.value)
+          text.innerHTML = myLead 
+       })
+     
+
+       for(let i=0; i<myLead.length; i++) {
+         const li =  document.createElement("h1")
+         h1.textContent =  myLead[i]
+       }
+
+    //    ////////////////////
+    const container = document.getElementById('container')
+
+    container.innerHTML = "<button>Buy!</button>"
+
+    container.addEventListener('click', function(){
+     
+    })
+    </script>
+</body>
+</html>
