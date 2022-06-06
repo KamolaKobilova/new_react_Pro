@@ -13,6 +13,8 @@
     <input type="text" id="input-el">
     <button id="input-btn">esfd</button>
     <div id="ul-el"></div>
+    <button id="clear">clear</button>
+
 
 
     <script>
@@ -20,20 +22,26 @@
         const inputEl = document.getElementById('input-el')
         const inputBtn = document.getElementById('input-btn')
         const ulEL = document.getElementById('ul-el')
+        const clear = document.getElementById('clear')
 
         inputBtn.addEventListener('click', function() {
             myLead.push(inputEl.value)
+            inputEl.value = ""
             renderLead()
         })
 
         function renderLead() {
             let listItem = ""
             for (let i = 0; i < myLead.length; i++) {
-                listItem += "<li>" + myLead[i] +
-                    "</li>"
+                listItem += "<li> <a href='#>" + myLead[i] + "</a> </li > "
             }
             ulEL.innerHTML = listItem
         }
+
+        clear.addEventListener('click', function() {
+            ulEL.textContent = " "
+
+        })
     </script>
 
 </body>
