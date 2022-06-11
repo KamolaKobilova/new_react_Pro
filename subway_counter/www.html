@@ -11,7 +11,7 @@
 <body style="background-color: rgb(225, 131, 131);">
 
     <input type="text" id="input-el">
-    <button id="input-btn">esfd</button>
+    <button id="input-btn">click</button>
     <div id="ul-el"></div>
     <button id="clear">clear</button>
 
@@ -27,21 +27,29 @@
         inputBtn.addEventListener('click', function() {
             myLead.push(inputEl.value)
             inputEl.value = ""
+            localStorage.setItem('myLead', JSON.stringify(myLead))
             renderLead()
         })
 
         function renderLead() {
             let listItem = ""
             for (let i = 0; i < myLead.length; i++) {
-                listItem += "<li> <a href='#>" + myLead[i] + "</a> </li > "
+                listItem += "<li> <a href='# >" + myLead[i] + "</a> </li > "
             }
             ulEL.innerHTML = listItem
         }
 
         clear.addEventListener('click', function() {
-            ulEL.textContent = " "
+            localStorage.clear()
+        
+            ulEL.textContent = []
+
 
         })
+
+        let leadsFromLocal = JSON.parse(localStorage.getItem("myLead"))
+        console.log(leadsFromLocal );
+        localStorage.clear()
     </script>
 
 </body>
